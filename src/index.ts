@@ -38,4 +38,17 @@ const usersRef = db.collection('users')
 // usersRef
 // 	.onSnapshot( returnDocuments )
 
-usersRef.get().then( returnDocuments )
+// usersRef.get().then( returnDocuments )
+
+// usersRef.where('active', '==', true).get().then( returnDocuments )
+
+// usersRef.where('salary', '>', 1800)
+	// .get().then( returnDocuments )
+
+// usersRef.where('salary', '>=', 1800)
+// 		.where('salary', '<=', 2300)
+// 	.get().then( returnDocuments )
+
+usersRef.where('salary', '>=', 1800)
+		.where('active', '==', true)
+	.get().then( returnDocuments )
