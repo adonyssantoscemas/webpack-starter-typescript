@@ -27,3 +27,9 @@ const usersRef = db.collection('users')
 // 		active: false,
 // 		age: 17
 // 	})
+
+usersRef
+	.doc('wx7x0X4HWkNgflaQKWLP')
+	.delete()
+	.then( () => console.log("Deleted!") )
+	.catch( e => console.log('error', e) )
