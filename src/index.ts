@@ -1,4 +1,5 @@
 import db from './firestore/config'
+import { returnDocuments } from './helpers/show-documents'
 
 const user = {
 	name: "Evelyn",
@@ -34,17 +35,7 @@ const usersRef = db.collection('users')
 // 	.then( () => console.log("Deleted!") )
 // 	.catch( e => console.log('error', e) )
 
-usersRef
-	.onSnapshot( snap => {
+// usersRef
+// 	.onSnapshot( returnDocuments )
 
-		const users: any[] = [];
-
-		snap.forEach( snapChild => {
-			users.push({ 
-				id: snapChild.id,
-				...snapChild.data()
-			})
-		})
-
-		console.log(users)
-	})
+usersRef.get().then( returnDocuments )
