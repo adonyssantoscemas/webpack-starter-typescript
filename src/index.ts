@@ -28,8 +28,23 @@ const usersRef = db.collection('users')
 // 		age: 17
 // 	})
 
+// usersRef
+// 	.doc('wx7x0X4HWkNgflaQKWLP')
+// 	.delete()
+// 	.then( () => console.log("Deleted!") )
+// 	.catch( e => console.log('error', e) )
+
 usersRef
-	.doc('wx7x0X4HWkNgflaQKWLP')
-	.delete()
-	.then( () => console.log("Deleted!") )
-	.catch( e => console.log('error', e) )
+	.onSnapshot( snap => {
+
+		const users: any[] = [];
+
+		snap.forEach( snapChild => {
+			users.push({ 
+				id: snapChild.id,
+				...snapChild.data()
+			})
+		})
+
+		console.log(users)
+	})
