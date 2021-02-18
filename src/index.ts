@@ -1,6 +1,3 @@
+import './firestore/config'
 
 
-
-const mensaje = 'Hola Mundo!';
-
-console.log( mensaje );
