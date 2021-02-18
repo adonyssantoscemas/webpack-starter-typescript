@@ -6,6 +6,8 @@ const user = {
 	birthday: 0
 }
 
+const usersRef = db.collection('users')
+
 // db.collection('users')
 // 	.add( user )
 // 	.then( ref => {
@@ -13,3 +15,15 @@ const user = {
 // 	} )
 // 	.catch( e => console.log("error", e))
 
+// usersRef
+// 	.doc('wx7x0X4HWkNgflaQKWLP')
+// 	.update({
+// 		active: false
+// 	})
+
+// usersRef
+// 	.doc('wx7x0X4HWkNgflaQKWLP')
+// 	.set({
+// 		active: false,
+// 		age: 17
+// 	})
